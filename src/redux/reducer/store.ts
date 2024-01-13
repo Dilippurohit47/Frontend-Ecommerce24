@@ -23,4 +23,4 @@ export const store = configureStore({
     }).concat(userAPI.middleware, productApi.middleware, orderApi.middleware, dashboardApi.middleware),
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type Rootstate = ReturnType<typeof store.getState>;

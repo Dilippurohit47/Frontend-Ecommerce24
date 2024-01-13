@@ -4,7 +4,7 @@ import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { BarChart } from "../../../components/admin/Charts";
 import { Skeleton } from "../../../components/loader";
 import { useBarQuery } from "../../../redux/api/dashboardApi";
-import { Rootstate } from "../../../redux/reducer/store";
+import { Rootstate} from "../../../redux/reducer/store";
 import { Customerror } from "../../../types/api-types";
 import { LastMonths } from "../../../utils/feature";
 
