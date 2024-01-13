@@ -1,4 +1,4 @@
-import { ShippingInfo, User, cartitems } from "./types";
+import {  User, cartitems } from "./types";
 
 export interface userReducerInitialState {
     user :User | null,
@@ -15,5 +15,11 @@ export interface cartReducerInitialState {
     shippingCharges : number;
     discount : number;
     total: number;
-    shippingInfo:ShippingInfo[];
+    shippingInfo:{
+        city: string;
+        state: string;
+        country: string;
+        pincode: string;
+        address: string;
+    };
 }

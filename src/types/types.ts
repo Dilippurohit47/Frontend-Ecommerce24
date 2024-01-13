@@ -25,11 +25,12 @@ export type  Product = {
 }
 
 export type ShippingInfo = {
-    address: string;
     city: string;
     state: string;
     country: string;
     pincode: string;
+    address: string;
+
   };
 
 export type cartitems ={

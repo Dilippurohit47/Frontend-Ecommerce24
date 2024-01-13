@@ -20,7 +20,7 @@ const defaultData: Order = {
     city: "",
     state: "",
     country: "",
-    pincode: 0,
+    pincode: "0",
   },
 
   status: "",

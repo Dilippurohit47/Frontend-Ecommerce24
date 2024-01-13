@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { cartReducerInitialState } from "../../types/reducer-type";
 import { cartitems, ShippingInfo } from "../../types/types";
-import { actions } from "react-table";
+// import { actions } from "react-table";
 
 const initialState: cartReducerInitialState = {
   loading: false,
@@ -12,7 +12,7 @@ const initialState: cartReducerInitialState = {
   discount: 0,
   total: 0,
   shippingInfo: {
-    address: "",
+    address :"",
     city: "",
     state: "",
     country: "",

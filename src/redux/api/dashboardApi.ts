@@ -2,13 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {
   BarResponse,
   LineResponse,
-  NewOrderRequest,
   PieResponse,
-  StatsResponse,
-  allOrdersResponse,
-  messageResponse,
-  orderDetailsResponse,
-  updateOrderRequest,
+  StatsResponse
 } from "../../types/api-types";
 
 export const dashboardApi = createApi({

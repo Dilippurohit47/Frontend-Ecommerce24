@@ -22,7 +22,7 @@ const Search = () => {
 
   const [search, setsearch] = useState("");
   const [sort, setsort] = useState("");
-  const [category, setcategory] = useState("");
+  const [category ,setcategory] = useState("");
   const [maxPrice, setmaxPrice] = useState(100000);
   const [page, setpage] = useState(1);
 
@@ -90,14 +90,14 @@ console.log(searchedData)
             type="range"
             min={100}
             max={100000}
-            value={maxPrice}
+            value={maxPrice} 
             onChange={(e) => setmaxPrice(Number(e.target.value))}
           />
         </div>
 
         <div>
           <h4>category</h4>
-          <select value={category} onChange={(e) => setsort(e.target.value)}>
+          <select value={category} onChange={(e) => setcategory(e.target.value)}>
             <option value="">ALL</option>
             {!loadingCategories &&
               categoriesResponse?.categories.map((i) => (
