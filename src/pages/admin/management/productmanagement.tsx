@@ -1,21 +1,19 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import AdminSidebar from "../../../components/admin/AdminSidebar";
-import { userReducerInitialState } from "../../../types/reducer-type";
 import { useSelector } from "react-redux";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import AdminSidebar from "../../../components/admin/AdminSidebar";
+import { Skeleton } from "../../../components/loader";
 import {
   useDeleteProductMutation,
   useProductsDetailsQuery,
-  useSearchProductsQuery,
-  useUpdateProductMutation,
+  useUpdateProductMutation
 } from "../../../redux/api/productApi";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { server } from "../../../redux/reducer/store";
-import { Skeleton } from "../../../components/loader";
+import { userReducerInitialState } from "../../../types/reducer-type";
 import { responseToast } from "../../../utils/feature";
 
-// const img =
-//   "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=804";
+
 
 const Productmanagement = () => {
   const { user } = useSelector(
@@ -88,7 +86,8 @@ responseToast(res , navigate , "/admin/product")
 
   }
 
-  const deleteHandler = async (e: FormEvent<HTMLFormElement>) => {
+  const deleteHandler = async ( e:FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
 const res = await deleteProduct({
 userId:user?._id! ,
   productId:data?.product._id!, 
@@ -131,7 +130,7 @@ responseToast(res , navigate , "/admin/product")
               <h3>₹{price}</h3>
             </section>
             <article>
-              <button className="product-delete-btn" onClick={deleteHandler}>
+              <button className="product-delete-btn" onClick={ ()=> deleteHandler}>
                 <FaTrash />
               </button>
               <form onSubmit={submitHandler}>

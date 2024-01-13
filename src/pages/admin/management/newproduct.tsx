@@ -1,14 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { useSelector } from "react-redux";
-import { userReducerInitialState } from "../../../types/reducer-type";
-import { useNewProductMutation } from "../../../redux/api/productApi";
-import { responseToast } from "../../../utils/feature";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "@reduxjs/toolkit/query";
+import AdminSidebar from "../../../components/admin/AdminSidebar";
+import { useNewProductMutation } from "../../../redux/api/productApi";
+import { Rootstate } from "../../../redux/reducer/store";
+import { responseToast } from "../../../utils/feature";
 
 const NewProduct = () => {
-  const { user } = useSelector((state: RootState) => state.userReducer);
+  const { user } = useSelector((state: Rootstate) => state.userReducer);
 
   const [name, setName] = useState<string>("");
   const [category, setCategory] = useState<string>("");

@@ -24,15 +24,13 @@ export type  Product = {
 
 }
 
-export type ShippingInfo ={
-
-
-    city : string,
-    state : string,
-    country : string,
-    pincode : number,
-    address : string,
-}
+export type ShippingInfo = {
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+    pincode: string;
+  };
 
 export type cartitems ={
 

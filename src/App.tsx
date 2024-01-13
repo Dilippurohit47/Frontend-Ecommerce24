@@ -1,7 +1,7 @@
-import { BrowserRouter as Router , Routes,Route } from 'react-router-dom'
-import {lazy,Suspense, useEffect} from "react";
- import Loader from './components/loader';
+import { Suspense, lazy, useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Header from './components/header';
+import Loader from './components/loader';
 
 
 
@@ -16,14 +16,14 @@ import Header from './components/header';
  const NotFound = lazy(()=> import('./pages/notFound'))
  const Checkout = lazy(()=> import('./pages/checkOut'))
 
- import { Toaster } from "react-hot-toast"
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './firebase';
-import { userExist, userNOtExist } from './redux/reducer/userReducer';
+ import { onAuthStateChanged } from 'firebase/auth';
+import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser } from './redux/api/userAPI';
-import { userReducerInitialState } from './types/reducer-type';
 import Protected from './components/protected';
+import { auth } from './firebase';
+import { getUser } from './redux/api/userAPI';
+import { userExist, userNOtExist } from './redux/reducer/userReducer';
+import { userReducerInitialState } from './types/reducer-type';
 // import Checkout from './pages/checkOut';
 // import notFound from 
  //Admin panel imports         

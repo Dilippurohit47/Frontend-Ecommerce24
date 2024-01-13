@@ -84,6 +84,7 @@ export type allOrdersResponse  = {
 export type orderDetailsResponse   = {
    success :boolean,
     order :Order, 
+
 }
 
 
@@ -124,18 +125,16 @@ export type deleteProductRequest  = {
 
 }
 
-export type NewOrderRequest  = {
-   orderItems :cartitems [];
-   shippingInfo:ShippingInfo;
-
-   subtotal : number;
-   tax : number;
-   shippingCharges : number;
-   discount : number;
-   total: number;
-   user:string;
-}
-
+export type NewOrderRequest = {
+  shippingInfo: ShippingInfo;
+  orderItems: cartitems[];
+  subtotal: number;
+  tax: number;
+  shippingCharges: number;
+  discount: number;
+  total: number;
+  user: string;
+};
 export type updateOrderRequest  = {
 userId:string;
 orderId:string;

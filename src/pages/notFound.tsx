@@ -1,4 +1,3 @@
-import React from 'react'
 import { TbError404Off } from "react-icons/tb";
 import { VscError } from "react-icons/vsc";
 import { Link } from 'react-router-dom';

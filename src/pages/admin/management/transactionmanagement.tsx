@@ -1,20 +1,20 @@
 import { FaTrash } from "react-icons/fa";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
 
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDeleteOrderMutation, useOrderDetailsQuery, useUpdateOrderMutation } from "../../../redux/api/orderApi";
 import { server } from "../../../redux/reducer/store";
 
+import { Skeleton } from "../../../components/loader";
 import { userReducerInitialState } from "../../../types/reducer-type";
 import { Order, orderItems } from "../../../types/types";
-import { Skeleton } from "../../../components/loader";
 import { responseToast } from "../../../utils/feature";
 
 
 
 const defaultData: Order = {
+  _id: "",
   shippingInfo: {
     address: "",
     city: "",
@@ -30,7 +30,8 @@ const defaultData: Order = {
   tax: 0,
   total: 0,
   orderItems: [],
-  user: { name: "", _id: "" },
+  user: { name: "", _id : "" },
+ 
 };
 const TransactionManagement = () => {
   const { user } = useSelector(
@@ -40,7 +41,7 @@ const TransactionManagement = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const { isLoading, data, isError, error } = useOrderDetailsQuery(params.id!);
+  const { isLoading, data } = useOrderDetailsQuery(params.id!);
 
   console.log("from tm" ,data)
 
@@ -55,6 +56,7 @@ const TransactionManagement = () => {
     total,
     discount,
     shippingCharges
+    
   } = data?.order || defaultData;
  
 

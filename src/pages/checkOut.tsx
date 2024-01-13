@@ -31,8 +31,8 @@ const {
 } = useSelector((state : Rootstate) => state.cartReducer)
 
 
- const location = useLocation();
-const clientSecret:string | undefined = location.state;
+//  const location = useLocation();
+// const clientSecret:string | undefined = location.state;
 
 const [newOrder] = useNewOrderMutation();
 
@@ -47,7 +47,7 @@ const dispatch = useDispatch();
       e.preventDefault();
 
       const orderData:NewOrderRequest = {
-        shippingInfo,
+        shippingInfo :shippingInfo,
       orderItems :cartItems,
         subtotal,
         tax,

@@ -9,9 +9,9 @@ import { Rootstate } from "../../../redux/reducer/store";
 
 const PieCharts = () => {
   const { user } = useSelector((state: Rootstate) => state.userReducer);
-  const { isLoading, data, error, isError } = usePieQuery(user?._id!);
+  const { isLoading, data,  isError } = usePieQuery(user?._id!);
 
-  const charts = data?.charts!;
+  // const charts = data?.charts!;
 
   if (isError) return <Navigate to={"/admin/dashboard"}/> 
 

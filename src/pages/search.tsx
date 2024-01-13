@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { Skeleton } from "../components/loader";
 import ProductCard from "../components/product-cart";
 import {
   useCategoriesQuery,
   useCategoryProductQuery,
   useSearchProductsQuery,
 } from "../redux/api/productApi";
-import { Customerror } from "../types/api-types";
-import toast from "react-hot-toast";
-import { Skeleton } from "../components/loader";
-import Products from "./admin/products";
-import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/reducer/cartReducer";
+import { Customerror } from "../types/api-types";
 import { cartitems } from "../types/types";
 
 const Search = () => {
@@ -38,7 +37,7 @@ const Search = () => {
     });
 
 
-    const { data:categoryProduct , isLoading } = useCategoryProductQuery(category);
+    const { data:categoryProduct  } = useCategoryProductQuery(category);
     console.log(categoryProduct)
 
 const dispatch = useDispatch();

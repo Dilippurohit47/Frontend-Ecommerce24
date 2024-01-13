@@ -1,12 +1,11 @@
-import React from "react";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { Skeleton } from "../components/loader";
 import ProductCard from "../components/product-cart";
 import { useLatestProductsQuery } from "../redux/api/productApi";
-import toast from "react-hot-toast";
-import { Skeleton } from "../components/loader";
-import { cartitems } from "../types/types";
-import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/reducer/cartReducer";
+import { cartitems } from "../types/types";
 
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductsQuery("");
